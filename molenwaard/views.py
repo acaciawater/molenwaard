@@ -8,5 +8,5 @@ from acacia.meetnet.models import Network
  
 class HomeView(NetworkView):
     def get_object(self):
-        return Network.objects.get(name = 'Gorinchem')
+        return Network.objects.get(name = 'Molenwaard')
     
