@@ -1,4 +1,4 @@
-"""gorinchem URL Configuration
+"""molenwaard URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -25,9 +25,12 @@ urlpatterns = patterns('delft.views',
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^data/', include('acacia.data.urls',namespace='acacia')),
-    url(r'^net/', include('acacia.meetnet.urls')),
+    url(r'^net/', include('acacia.meetnet.urls',namespace='meetnet')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls')),    
+#    url(r'^logger/(?P<pk>\d+)/$', LoggerPosListView.as_view(), name='logger_list'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.EXPORT_URL, document_root=settings.EXPORT_ROOT)

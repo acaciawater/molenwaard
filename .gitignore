@@ -53,8 +53,8 @@ coverage.xml
 *.log
 local_settings.py
 secrets.py
-media/
-logs/
+media/*
+logs/*
 
 # Flask stuff:
 instance/
@@ -90,3 +90,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+/export/
+/logs/

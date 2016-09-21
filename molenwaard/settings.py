@@ -39,12 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'bootstrap3',
-    'registration',
     'acacia',
     'acacia.data',
     'acacia.meetnet',
     'acacia.data.knmi',
     'molenwaard',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -101,6 +101,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EXPORT_URL = '/export/'
+EXPORT_ROOT = os.path.join(BASE_DIR, 'export')
+
 UPLOAD_DATAFILES = 'datafiles' 
 UPLOAD_THUMBNAILS = 'thumbnails' 
 UPLOAD_IMAGES = 'images' 
@@ -146,6 +150,14 @@ LOGGING = {
             'backupCount': 0,
             'formatter': 'update'
         },
+        'upload': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOGGING_ROOT, 'upload.log'),
+            'maxBytes': 10000,
+            'backupCount': 0,
+            'formatter': 'default'
+        },
         'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
@@ -169,8 +181,18 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
-        'acacia.data': {
+        'acacia': {
             'handlers': ['file',],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'molenwaard': {
+            'handlers': ['file',],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'upload': {
+            'handlers': ['upload',],
             'level': 'DEBUG',
             'propagate': True,
         },
