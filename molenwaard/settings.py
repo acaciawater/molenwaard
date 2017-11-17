@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.sys.path.append('/home/theo/texelmeet/acaciadata')
@@ -26,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.acaciadata.com', 'localhost']
 
+# for debug toolbar
+INTERNAL_IPS = '127.0.0.1'
+
 # Application definition
 INSTALLED_APPS = (
     'grappelli',
@@ -38,25 +42,27 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'debug_toolbar',
     'bootstrap3',
-    'acacia',
+    'molenwaard.apps.Config',
     'acacia.data',
     'acacia.meetnet',
     'acacia.data.knmi',
-    'molenwaard',
+    'acacia.ahn',
+    'acacia',
     'registration',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-)
+]
 
 ROOT_URLCONF = 'molenwaard.urls'
 
@@ -82,7 +88,12 @@ WSGI_APPLICATION = 'molenwaard.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'nl-nl'
+LANGUAGE_CODE = 'nl'
+
+LANGUAGES = [
+    ('nl',_('Dutch')),
+    ('en',_('English'))
+]
 
 TIME_ZONE = 'Europe/Amsterdam'
 
