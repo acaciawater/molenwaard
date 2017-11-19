@@ -15,7 +15,6 @@ import os
 from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-os.sys.path.append('/home/theo/texelmeet/acaciadata')
 
 SITE_ID = 1
 
@@ -124,13 +123,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Grapelli admin
 GRAPPELLI_ADMIN_TITLE='Beheer van grondwatermeetnet Molenwaard'
-
-# Celery stuff
-#BROKER_URL = 'django://'
-#CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
-#INSTALLED_APPS += ('kombu.transport.django','djcelery',)                  
-
-#CELERY_ALWAYS_EAGER = DEBUG
 
 # registration stuff
 ACCOUNT_ACTIVATION_DAYS = 7
