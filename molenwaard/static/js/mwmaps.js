@@ -303,7 +303,7 @@ function initMap(div,options) {
 	var map = L.map(div,options);
 
  	baseMaps = {'Openstreetmap': osm, 'Google wegenkaart': roads, 'Google satelliet': satellite, 'ESRI wegenkaart': topo, 'ESRI satelliet': imagery};
-	overlayMaps = {'Grondwaterstanden': grondwaterstanden, 'Ontwateringsdiepte': ontwatering, 'Maaiveld': maaiveld, 'AHN3 (ArcGIS Online)': ahn35 };
+	overlayMaps = {'Grondwaterstand': grondwaterstanden, 'Ontwateringsdiepte': ontwatering, 'Maaiveld': maaiveld, 'AHN3 maaiveld': ahn35 };
 	L.control.layers(baseMaps, overlayMaps).addTo(map);
 	
 	if (!restoreMap(map)) {
