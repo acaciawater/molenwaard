@@ -1,8 +1,9 @@
-{% extends 'bootbase.html' %} 
-{% block title %}Grondwaterput {{object}} {% endblock title %} 
+{% extends 'bootbase.html' %}
+{% load i18n %} 
+{% block title %}Waarnemingsput {{object.name}} {% endblock title %} 
 {% block breadcrumbs %}
 <ol class="breadcrumb">
-	<li><a href="/">Home</a></li>
+	<li><a href="/">{% trans 'Home' %}</a></li>
 </ol>
 {% endblock breadcrumbs %} 
 {% block brandname %}
@@ -55,7 +56,7 @@ a img {
 {% block content %}
 <div id="content">
 	<div class="container-fluid">
-		<h4>Grondwaterput {{object.nitg|default:object.name}}</h4>
+		<h4>Waarnemingsput {{object.name}}</h4>
 		<div class="row row-fluid">
 			<div class="col col-md-8">
 				<div class="row">
@@ -63,6 +64,10 @@ a img {
 						<table class="table table-striped">
 							<thead></thead>
 							<tbody>
+								<tr>
+									<td>NITG code</td>
+									<td>{{object.nitg|default:'onbekend'}}</td>
+								</tr>
 								<tr>
 									<td>Omschrijving</td>
 									<td>{{object.description|safe}}</td>
@@ -166,6 +171,7 @@ a img {
 										</tr>
 									{% endfor %}
 								{% endif %}
+							{% if s.loggerpos_set.count > 1 %}
 							<tr>
 								<td>{{s.nr}}</td>
 								<td>{{s.top|floatformat:2|default:'onbekend'}}</td>
@@ -179,7 +185,8 @@ a img {
 									<td>{{stats.p50|floatformat:3|default:''}}</td>
 									<td>{{stats.p90|floatformat:3|default:''}}</td>
 								{% endwith %}
-							</tr>	
+							</tr>
+							{% endif %}	
 						    {% endfor %} 
 						</tbody>
 		

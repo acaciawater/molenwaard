@@ -1,6 +1,6 @@
 {% extends 'highchart.html' %}
 {% load i18n %}
-{% block title %}{% trans Chart %} {{object}}{% endblock title %}
+{% block title %}{% trans Chart %} {{object.name}}{% endblock title %}
 {% block breadcrumbs %}
 <ol class="breadcrumb">
 	<li><a href="/">{% trans "Home" %}</a></li>
