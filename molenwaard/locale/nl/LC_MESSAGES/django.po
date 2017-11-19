@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-17 16:46+0100\n"
+"POT-Creation-Date: 2017-11-19 23:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: settings.py:94
+#: settings.py:93
 msgid "Dutch"
 msgstr "Nederlands"
 
-#: settings.py:95
+#: settings.py:94
 msgid "English"
 msgstr "Engels"
 
-#: templates/meetnet/chart_detail.html:6
+#: templates/meetnet/chart_detail.html:6 templates/meetnet/well_detail.html:6
 msgid "Home"
 msgstr "Startpagina"
 
@@ -34,27 +34,65 @@ msgstr "Startpagina"
 msgid "Monitoring network"
 msgstr "Meetnet"
 
-#: templates/molenwaard/base.html:76
+#: templates/molenwaard/base.html:77
 msgid "Admin"
 msgstr "Beheer"
 
-#: templates/molenwaard/base.html:82
+#: templates/molenwaard/base.html:80
+msgid "Admin page"
+msgstr "Beheer pagina"
+
+#: templates/molenwaard/base.html:81
+msgid "Upload files"
+msgstr "Bestanden uploaden"
+
+#: templates/molenwaard/base.html:82 templates/molenwaard/base.html:110
+msgid "Download files"
+msgstr "Gegevens downloaden"
+
+#: templates/molenwaard/base.html:83
+msgid "Manual measurements"
+msgstr "Handpeilingen"
+
+#: templates/molenwaard/base.html:91
 msgid "Log out"
 msgstr "Uitloggen"
 
-#: templates/molenwaard/base.html:83
+#: templates/molenwaard/base.html:92
 msgid "Change password"
 msgstr "Wachtwoord veranderen"
 
-#: templates/molenwaard/base.html:87
+#: templates/molenwaard/base.html:96
 msgid "Log in"
 msgstr "Inloggen"
 
-#: templates/molenwaard/home.html:40
+#: templates/molenwaard/base.html:114
+msgid "Dear"
+msgstr "Beste"
+
+#: templates/molenwaard/base.html:118
+#, python-format
+msgid ""
+"\n"
+"\t\t\t\tClick CSV or NITG to dowload all timeseries from the monitoring "
+"network %(object)s.<br>\n"
+"\t\t\t\tWe will send an email with a download link to %(email)s when the "
+"files are ready for download.\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"Klik CSV of NITG om alle tijdreeksen uit het meetnet %(object)s te downloaden.<br>"
+"We sturen een email naar %(email)s als de tijdreeksen gereed zijn."
+
+#: templates/molenwaard/base.html:128
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: templates/molenwaard/home.html:41
 msgid "Wells"
 msgstr "Putten"
 
-#: templates/molenwaard/home.html:40
+#: templates/molenwaard/home.html:42
 msgid "Number of wells"
 msgstr "Aantal putten"
 
@@ -66,11 +104,5 @@ msgstr "Aantal putten"
 #~ msgid "Monitoring well"
 #~ msgstr "Meetnet"
 
-#~ msgid "Last measurement"
-#~ msgstr "Laatste meting"
-
 #~ msgid "Download chart"
 #~ msgstr "Grafiek downloaden"
-
-#~ msgid "Download data"
-#~ msgstr "Gegevens downloaden"
