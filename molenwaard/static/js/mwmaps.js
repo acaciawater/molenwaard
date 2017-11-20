@@ -257,7 +257,7 @@ function initMap(div,options) {
 	
 	var ontwateringsLegend = L.wmsLegend({
 		position:'bottomright', 
-		title:'Ontwateringsdiepte', 
+		title:'Ontwateringsdiepte<br>(m -maaiveld)', 
 		uri:'http://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:ontwateringMerc'
 	});
 
@@ -272,7 +272,7 @@ function initMap(div,options) {
 
 	var ahn3Legend = L.wmsLegend({
 		position:'bottomright', 
-		title:'Maaiveld', 
+		title:'Maaiveld<br>(m tov NAP)', 
 		uri:'http://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:ahn3filledMerc'
 	});
 	
@@ -287,7 +287,7 @@ function initMap(div,options) {
 
 	var grondwaterstandLegend = L.wmsLegend({
 		position:'bottomright', 
-		title:'Grondwaterstand', 
+		title:'Grondwaterstand<br>(m tov NAP)', 
 		uri:'http://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:Grondwaterstanden'
 	});
 
