@@ -5,7 +5,6 @@ Created on Sep 1, 2016
 '''
 from acacia.meetnet.views import NetworkView
 from acacia.meetnet.models import Network, Well
-from django.contrib.gis.gdal.srs import SpatialReference, CoordTransform 
 from django.http.response import JsonResponse, HttpResponseServerError
 from django.views.generic.detail import DetailView
 import json
@@ -45,15 +44,9 @@ def well_locations(request):
     """ return json response with well locations
     """
     result = []
-    trans = None
     for p in Well.objects.all():
         try:
-            pnt = p.location
-            if trans is None:
-                wgs84 = SpatialReference(4326)
-                rdnew = SpatialReference(28992)
-                trans = CoordTransform(rdnew,wgs84)
-            pnt.transform(trans)
+            pnt = p.latlon()
             result.append({'id': p.id, 'name': p.name, 'nitg': p.nitg, 'description': p.description, 'lon': pnt.x, 'lat': pnt.y})
         except Exception as e:
             return HttpResponseServerError(unicode(e))
