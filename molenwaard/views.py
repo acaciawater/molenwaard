@@ -11,6 +11,7 @@ from django.views.generic.detail import DetailView
 import json
 from django.conf import settings
 
+
 #deprecated 
 class GooleView(NetworkView):
     def get_context_data(self, **kwargs):
