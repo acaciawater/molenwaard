@@ -94,7 +94,10 @@ env/
 
 export/
 logs/
+media
 media/
+acacia
+acacia/
 /R1785_mw-pb05.mon
 /.gitignore~
 /media/

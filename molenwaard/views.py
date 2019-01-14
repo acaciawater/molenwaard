@@ -59,3 +59,4 @@ def well_locations(request):
         except Exception as e:
             return HttpResponseServerError(unicode(e))
     return JsonResponse(result,safe=False)
+
