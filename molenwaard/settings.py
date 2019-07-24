@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
+import os, sys
 from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['.acaciadata.com', 'localhost']
 
 # for debug toolbar
-INTERNAL_IPS = '127.0.0.1'
+# INTERNAL_IPS = '127.0.0.1'
 
 # Application definition
 INSTALLED_APPS = (
@@ -163,6 +163,10 @@ LOGGING = {
             'backupCount': 0,
             'formatter': 'default'
         },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
+        },
         'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.TimedRotatingFileHandler',
@@ -190,6 +194,11 @@ LOGGING = {
             'handlers': ['file',],
             'level': 'DEBUG',
             'propagate': True,
+        },
+        'molenward.management': {
+            'handlers': ['console',],
+            'level': 'DEBUG',
+            'propagate': False,
         },
         'molenwaard': {
             'handlers': ['file',],

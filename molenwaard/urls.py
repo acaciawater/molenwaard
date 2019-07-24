@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from views import well_locations, PopupView, HomeView
+from views import well_locations, PopupView, HomeView, download_bro
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^data/', include('acacia.data.urls',namespace='acacia')),
     url(r'^net/', include('acacia.meetnet.urls',namespace='meetnet')),
     url(r'^locs/',well_locations,name='locs'),
+    url(r'^bro/',download_bro,name='bro'),
     url(r'^pop/(?P<pk>\d+)', PopupView.as_view()),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
