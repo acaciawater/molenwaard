@@ -17,7 +17,7 @@ def registration_request(well, kvk):
     SubElement(request, 'ns1:qualityRegime').text = 'IMBRO/A'
     SubElement(request, 'ns1:underPrivilege').text = 'ja'
     
-    sourceDocument = SubElement(request, 'ns:SourceDocument')
+    sourceDocument = SubElement(request, 'ns:sourceDocument')
     construction = SubElement(sourceDocument, 'ns:GMW_Construction')
 
     SubElement(construction, 'ns:objectIdAccountableParty').text = kvk 
