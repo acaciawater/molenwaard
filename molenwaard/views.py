@@ -3,7 +3,7 @@ Created on Sep 1, 2016
 
 @author: theo
 '''
-import os,json
+import json
 
 from django.conf import settings
 from django.http.response import JsonResponse, HttpResponseServerError,\
