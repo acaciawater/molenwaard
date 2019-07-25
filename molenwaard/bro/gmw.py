@@ -1,14 +1,13 @@
-from xml.etree.ElementTree import Element, SubElement, ElementTree
-
-from acacia.meetnet.models import Well
+from xml.etree.ElementTree import Element, SubElement
 
 
 def registration_request(well, kvk):
     ''' Creates xml with registration request (registratieverzoek) for BRO '''
+
     request = Element('ns:registrationRequest',
     {
         'xmlns:ns':'http://www.broservices.nl/xsd/isgmw/1.1',
-        'xmlns:ns1':'http://www.broservices.nl/xsd/brocommon/3.0',
+        'xmlns:ns1':'http://www.broservices.nl/xsd/brocommon/3.0',        
         'xmlns:ns2':'http://www.broservices.nl/xsd/gmwcommon/1.1',
         'xmlns:ns3':'http://www.opengis.net/gml/3.2'
     })
@@ -25,7 +24,7 @@ def registration_request(well, kvk):
     SubElement(construction, 'ns:constructionStandard', codeSpace='urn:bro:gmw:ConstructionStandard').text = 'onbekend'
     SubElement(construction, 'ns:initialFunction', codeSpace='urn:bro:gmw:InitialFunction').text = 'stand'
     SubElement(construction, 'ns:numberOfMonitoringTubes').text = str(well.screen_set.count())
-    SubElement(construction, 'ns:groundLevelStable').text = 'ja'
+    SubElement(construction, 'ns:groundLevelStable').text = 'onbekend'
     SubElement(construction, 'ns:wellStability', codeSpace='urn:bro:gmw:WellStability').text = 'onbekend'
     SubElement(construction, 'ns:nitgCode').text = well.nitg
     SubElement(construction, 'ns:owner').text = kvk
