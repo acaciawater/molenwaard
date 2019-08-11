@@ -49,8 +49,8 @@ INSTALLED_APPS = (
     'acacia.meetnet',
     'acacia.data.knmi',
     'acacia.ahn',
-    'acacia.validation',
     'acacia',
+    'acacia.validation',
     'registration',
 )
 
@@ -196,7 +196,12 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
-        'molenward.management': {
+        'molenwaard.management': {
+            'handlers': ['console',],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'acacia.meetnet.management': {
             'handlers': ['console',],
             'level': 'DEBUG',
             'propagate': False,
