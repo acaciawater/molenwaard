@@ -10,13 +10,17 @@ from django.http.response import JsonResponse, HttpResponseServerError,\
     HttpResponse
 from django.views.generic.detail import DetailView
 
-from acacia.meetnet.models import Network, Well
+from acacia.meetnet.models import Network, Well, Screen
 from acacia.meetnet.views import NetworkView
 import zipfile
 from bro.gmw import registration_request
 import StringIO
 from xml.etree.ElementTree import ElementTree
 from django.utils.text import slugify
+from django.forms.models import modelformset_factory
+from acacia.data.models import DataPoint, Series, ManualSeries
+from forms import DatapointForm
+from django.shortcuts import get_object_or_404, render
 
 
 class HomeView(NetworkView):
