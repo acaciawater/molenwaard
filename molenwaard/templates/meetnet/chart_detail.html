@@ -18,25 +18,17 @@
 	margin-top: -7px;
 	max-height: 32px;
 }
+#status {
+  padding-left: 4em;
+}
 </style>
 {% endblock %}
-{% block navbar-right %}
-<!--  <li class="dropdown"> -->
-<!--    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Referentie<b class="caret"></b></a> -->
-<!--    <ul class="dropdown-menu"> -->
-<!--      <li><a href="#"><i class="fa fa-check"></i>NAP</a></li> -->
-<!--      <li><a href="#">Maaiveld</a></li> -->
-<!--      <li><a href="#">Bovenkant buis</a></li> -->
-<!--      <li><a href="#">Sensor</a></li> -->
-<!--    </ul> -->
-<!--  </li> -->
-{% endblock navbar-right %}
 {% block script %}
 {{ block.super }}
 <script>
 function fetchSeries(name,id) {
 	var html = '<div id="screen'+id+'">Laden filter ' + name + '&hellip;</div>';
-	$("#container").append(html);
+	$("#status").append(html);
     $.getJSON('/net/data/'+id+'?{{request.GET.urlencode}}', function (data) {
 	  	var chart = $('#container').highcharts();
 	  	$.each(data,function(key,values) {
@@ -101,4 +93,5 @@ $(function () {
 <div class="text-center">
 <a href="{% url 'meetnet:download-well' object.id %}" class="btn btn-primary active" data-toggle="tooltip" title="Tijdreeksen van deze put downloaden als csv bestand" id="download">Downloaden</a>
 </div>
+<div id="status"></div>
 {% endblock %}
