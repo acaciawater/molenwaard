@@ -19,7 +19,6 @@ from xml.etree.ElementTree import ElementTree
 from django.utils.text import slugify
 from django.forms.models import modelformset_factory
 from acacia.data.models import DataPoint, Series, ManualSeries
-from forms import DatapointForm
 from django.shortcuts import get_object_or_404, render
 
 
