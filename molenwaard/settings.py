@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'molenwaard.apps.Config',
     'acacia.data',
     'acacia.meetnet',
+    'acacia.meetnet.bro',
     'acacia.data.knmi',
     'acacia.ahn',
     'acacia',
