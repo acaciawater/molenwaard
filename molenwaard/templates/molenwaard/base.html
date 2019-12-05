@@ -106,7 +106,7 @@ window.cookieconsent.initialise({
 		            <li><a href="{% url 'bro:gmw' %}"">{% trans "Download BRO" %}</a></li>
 		            <li><a href="{% url 'meetnet:add-logger' %}"">{% trans "Add datalogger" %}</a></li>
 		            <li><a href="/admin/meetnet/handpeilingen">{% trans "Manual measurements" %}</a></li>
-		            <li><a href="{% url 'meetnet:upload_files' object.id %}">{% trans "Upload files" %}</a></li>
+		            <li><a href="{% url 'meetnet:upload-files' object.id %}">{% trans "Upload files" %}</a></li>
 			    {% endif %}
 		            <li><a href="#" data-toggle="modal" data-target="#downloadModal">{% trans "Download files" %}</a></li>
 		          </ul>
