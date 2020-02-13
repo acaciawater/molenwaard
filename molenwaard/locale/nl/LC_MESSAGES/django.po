@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-01 17:13+0100\n"
+"POT-Creation-Date: 2020-02-13 10:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,16 +26,6 @@ msgstr "Nederlands"
 msgid "English"
 msgstr "Engels"
 
-#: templates/meetnet/chart_detail.html:6
-#: templates/meetnet/well_detail.html:6
-msgid "Home"
-msgstr "Startpagina"
-
-#: templates/molenwaard/base.html:90
-#: templates/molenwaard/home.html:3
-msgid "Monitoring network"
-msgstr "Meetnet"
-
 #: templates/molenwaard/base.html:101
 msgid "Admin"
 msgstr "Beheer"
@@ -44,45 +34,44 @@ msgstr "Beheer"
 msgid "Admin page"
 msgstr "Beheer pagina"
 
-#: templates/molenwaard/base.html:106
-#, fuzzy
-msgid "Download BRO"
-msgstr "BRO registratie downloaden"
-
 #: templates/molenwaard/base.html:107
-msgid "Add datalogger"
-msgstr "Datalogger toevoegen"
+msgid "BRO registratie"
+msgstr ""
 
-#: templates/molenwaard/base.html:108
+#: templates/molenwaard/base.html:109
 msgid "Manual measurements"
 msgstr "Handpeilingen"
 
-#: templates/molenwaard/base.html:109
+#: templates/molenwaard/base.html:110
 msgid "Upload files"
-msgstr "Bestanden uploaden"
+msgstr "Mon bestanden uploaden"
 
 #: templates/molenwaard/base.html:111
-#: templates/molenwaard/base.html:137
+msgid "Upload Excel with metadata"
+msgstr "Metadata (Excel) uploaden"
+
+#: templates/molenwaard/base.html:113
+#: templates/molenwaard/base.html:139
 msgid "Download files"
 msgstr "Gegevens downloaden"
 
-#: templates/molenwaard/base.html:118
+#: templates/molenwaard/base.html:120
 msgid "Log out"
 msgstr "Uitloggen"
 
-#: templates/molenwaard/base.html:119
+#: templates/molenwaard/base.html:121
 msgid "Change password"
 msgstr "Wachtwoord veranderen"
 
-#: templates/molenwaard/base.html:123
+#: templates/molenwaard/base.html:125
 msgid "Log in"
 msgstr "Inloggen"
 
-#: templates/molenwaard/base.html:141
+#: templates/molenwaard/base.html:143
 msgid "Dear"
 msgstr "Beste"
 
-#: templates/molenwaard/base.html:145
+#: templates/molenwaard/base.html:147
 #, python-format
 msgid ""
 "\n"
@@ -96,15 +85,19 @@ msgstr "\n"
 "downloaden.<br>We sturen een email naar %(email)s als de tijdreeksen gereed "
 "zijn."
 
-#: templates/molenwaard/base.html:155
+#: templates/molenwaard/base.html:157
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: templates/molenwaard/home.html:41
+#: templates/molenwaard/home.html:3
+msgid "Monitoring network"
+msgstr "Meetnet"
+
+#: templates/molenwaard/home.html:46
 msgid "Wells"
 msgstr "Putten"
 
-#: templates/molenwaard/home.html:42
+#: templates/molenwaard/home.html:46
 msgid "Number of wells"
 msgstr "Aantal putten"
 
