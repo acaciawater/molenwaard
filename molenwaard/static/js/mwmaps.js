@@ -223,9 +223,9 @@ function toggleLabels() {
  * @returns the map
  */
 function initMap(div,options) {
-	var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
- 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+ 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	});
 	
 	var roads = L.gridLayer.googleMutant({
@@ -236,15 +236,15 @@ function initMap(div,options) {
 	    type: 'satellite' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
 	});
 	
-	var topo = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	var topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
 		attribution: 'Tiles &copy; Esri'
 	});
 	
-	var imagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	var imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 		attribution: 'Tiles &copy; Esri'
 	});
 	
-	var bodemkaart = L.tileLayer.wms('http://geodata.nationaalgeoregister.nl/bodemkaart50000/wms', {
+	var bodemkaart = L.tileLayer.wms('https://geodata.nationaalgeoregister.nl/bodemkaart50000/wms', {
 		layers: 'bodemkaart50000',
 		format: 'image/png',
 		opacity: 0.4
@@ -261,10 +261,10 @@ function initMap(div,options) {
 	var ontwateringsLegend = L.wmsLegend({
 		position:'bottomright', 
 		title:'Ontwateringsdiepte<br>(m -maaiveld)', 
-		uri:'http://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:ontwateringMerc'
+		uri:'https://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:ontwateringMerc'
 	});
 
-	var ontwatering = L.tileLayer.betterWms('http://maps.acaciadata.com/geoserver/Molenwaard/wms', {
+	var ontwatering = L.tileLayer.betterWms('https://maps.acaciadata.com/geoserver/Molenwaard/wms', {
 		layers: 'Molenwaard:ontwateringMerc',
 		format: 'image/png',
 		transparent: true,
@@ -276,10 +276,10 @@ function initMap(div,options) {
 	var ahn3Legend = L.wmsLegend({
 		position:'bottomright', 
 		title:'Maaiveld<br>(m tov NAP)', 
-		uri:'http://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:ahn3filledMerc'
+		uri:'https://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:ahn3filledMerc'
 	});
 	
-	var maaiveld = L.tileLayer.betterWms('http://maps.acaciadata.com/geoserver/Molenwaard/wms', {
+	var maaiveld = L.tileLayer.betterWms('https://maps.acaciadata.com/geoserver/Molenwaard/wms', {
 		layers: 'Molenwaard:ahn3filledMerc',
 		format: 'image/png',
 		tiled: true,
@@ -291,10 +291,10 @@ function initMap(div,options) {
 	var grondwaterstandLegend = L.wmsLegend({
 		position:'bottomright', 
 		title:'Grondwaterstand<br>(m tov NAP)', 
-		uri:'http://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:Grondwaterstanden'
+		uri:'https://maps.acaciadata.com/geoserver/Molenwaard/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Molenwaard:Grondwaterstanden'
 	});
 
-	var grondwaterstanden = L.tileLayer.betterWms('http://maps.acaciadata.com/geoserver/Molenwaard/wms', {
+	var grondwaterstanden = L.tileLayer.betterWms('https://maps.acaciadata.com/geoserver/Molenwaard/wms', {
 		layers: 'Molenwaard:Grondwaterstanden',
 		format: 'image/png',
 		tiled: true,
