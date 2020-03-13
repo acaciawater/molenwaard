@@ -32,6 +32,7 @@ class Command(BaseCommand):
         files = options['files']
         admin = User.objects.get(username='theo')
         wells = set()
+        begin = None
         tz=pytz.timezone('Europe/Amsterdam')
         for fname in files:
             logger.info('Importing data from {}'.format(fname))
@@ -39,6 +40,7 @@ class Command(BaseCommand):
             nrows, ncols = df.shape
             span = [tz.localize(df.index.min()), tz.localize(df.index.max())]
             start, stop = span
+            begin = start if begin is None else min(begin,start)
             logger.info('{} loggers found'.format(ncols))
             logger.info('count = {}, start = {}, stop = {}.'.format(nrows, start, stop))
             screens = set()
@@ -91,15 +93,15 @@ class Command(BaseCommand):
                 pos.files.add(sourcefile)
                 screens.add(pos.screen)
 
-            logger.info('File import completed')
-            if len(screens) > 0:
-                logger.info('Updating time series')
-                for screen in screens:
-                    series = screen.find_series()
-                    if series:
-                        logger.info(series)
-                        recomp(screen, series, start)
-                        wells.add(screen.well)
+        logger.info('File import completed')
+        if len(screens) > 0:
+            logger.info('Updating time series')
+            for screen in screens:
+                series = screen.find_series()
+                if series:
+                    logger.info(series)
+                    recomp(screen, series, begin)
+                    wells.add(screen.well)
         if len(wells)>0:
             logger.info('Updating well charts')
             make_wellcharts(None,None,wells)
