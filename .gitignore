@@ -104,3 +104,4 @@ acacia/
 *.sql
 *.~
 /generator.json
+/data/
