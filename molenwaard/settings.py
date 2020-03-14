@@ -41,6 +41,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'rest_framework',
+    'rest_framework_gis',
+    'rest_framework_filters',
+    'django_filters',
     'corsheaders',
     'debug_toolbar',
     'bootstrap3',
@@ -54,6 +58,15 @@ INSTALLED_APPS = (
     'acacia.validation',
     'registration',
 )
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False,
+#    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework_filters.backends.DjangoFilterBackend',),
+#    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100            
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -199,6 +212,11 @@ LOGGING = {
             'propagate': True,
         },
         'molenwaard.management': {
+            'handlers': ['console',],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'acacia.management': {
             'handlers': ['console',],
             'level': 'DEBUG',
             'propagate': False,
