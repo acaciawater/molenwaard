@@ -24,7 +24,8 @@ SITE_ID = 1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.acaciadata.com', 'localhost']
+# ALLOWED_HOSTS = ['.acaciadata.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # for debug toolbar
 # INTERNAL_IPS = '127.0.0.1'
@@ -68,6 +69,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'acacia.middleware.FilterHostMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
